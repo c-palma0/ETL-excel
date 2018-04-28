@@ -2,10 +2,11 @@
 
 	
 
-<?php $results = mysqli_query($db, "SELECT * FROM tbl_accidentes"); ?>
+<?php $results = mysqli_query($db, "SELECT * FROM tbl_accidentes");
+$resultado = $results -> num_rows; ?>
 <div class="etl2">
 
-<?php if ($results!=null):?>
+<?php if ($resultado):?>
 
 	<h3>&nbsp;&nbsp;Accidentes &nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
@@ -124,7 +125,7 @@
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'data' : dataArr},
+            data    : {'dataa' : dataArr},
             success : function(response){
                       //  alert(response);
                       },

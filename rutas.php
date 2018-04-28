@@ -2,10 +2,11 @@
 
 	
 
-<?php $results = mysqli_query($db, "SELECT * FROM tbl_accidentes"); ?>
+<?php $results = mysqli_query($db, "SELECT * FROM tbl_rutas_camion");
+$resultado = $results -> num_rows; ?>
 <div class="etl2">
 
-<?php if ($results!=null):?>
+<?php if ($resultado):?>
 
 	<h3>Rutas de camión &nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
@@ -17,11 +18,7 @@
 			<th scope="col"><input type="checkbox" id="checkAll"></th>
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
-			<th scope="col">Fecha </th>
-			<th scope="col">Hora</th>
-            <th scope="col">Afectados</th>
-            <th scope="col">Lesionados</th>
-            <th scope="col">Muertos</th>
+			<th scope="col">Nombre</th>
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>
 		</tr>
 	</thead>
@@ -33,11 +30,7 @@
 			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['fecha'];?><input style="display:none;" type="text" name="fecha" value="<?php echo $row['fecha'];?>"></td>	
-            <td><?php echo $row['hora'];?><input style="display:none;" type="text" name="hora" value="<?php echo $row['hora'];?>"></td>	
-            <td><?php echo $row['afectados'];?></rd>
-            <td><?php echo $row['lesionados'];?></rd>
-            <td><?php echo $row['muertos'];?></rd>
+			<td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="fecha" value="<?php echo $row['fecha'];?>"></td>	
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
@@ -124,7 +117,7 @@
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'data' : dataArr},
+            data    : {'datar' : dataArr},
             success : function(response){
                       //  alert(response);
                       },

@@ -4,12 +4,12 @@
 
 <?php 
      $results = mysqli_query($db, "SELECT * FROM tbl_glorietas"); 
-    ?>
+   $resultado = $results -> num_rows; ?>
 <div class="etl2">
 
-<?php if ($results!=null):?>
+<?php if ($resultado):?>
 
-	<h3>&nbsp;&nbsp;Glotietas&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
+	<h3>&nbsp;&nbsp;Glorietas&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
 	<div>
@@ -120,7 +120,7 @@
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'data' : dataArr},
+            data    : {'datag' : dataArr},
             success : function(response){
                       //  alert(response);
                       },

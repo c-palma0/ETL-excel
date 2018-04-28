@@ -1,13 +1,15 @@
 <?php include 'header.php';?>
 
 	
+<?php $results = mysqli_query($db, "SELECT t.coord_x , t.coord_y, t.id, t.num_oficial, c.colonia  FROM tbl_numeros_oficiales as t join ct_colonia as c on t.id_colonia= c.id");
+ $resultado = $results -> num_rows; ?>
 
-<?php $results = mysqli_query($db, "SELECT t.coord_x , t.coord_y, t.id, t.num_oficial, c.colonia, t.id_ca FROM tbl_numeros_oficiales as t join ct_colonia as c on t.id_colonia= c.id"); ?>
 <div class="etl1">
 
-<?php if ($results!=null):?>
 
-	<h3>Cuerpos de agua    <img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
+<?php if ($resultado):?>
+
+	<h3>Numeros Oficiales<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
 	<div>
@@ -17,8 +19,8 @@
 			<th scope="col"><input type="checkbox" id="checkAll"></th>
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
-			<th scope="col">Tipo de Cuerpo de Agua</th>
-			<th scope="col">Área</th>
+			<th scope="col">Num. Oficial</th>
+			<th scope="col">Colonia</th>
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>
 		</tr>
 	</thead>
@@ -30,8 +32,8 @@
 			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['tipo'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-			<td><input style=" color: #DC3545 ;" style="text-align:center;" type="text" name="area" value="<?php echo $row['area'];?>"  pattern="0?\d+?" title="Solo numeros positivos" required></td>
+			<td><?php echo $row['num_oficial'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
+
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
@@ -114,7 +116,7 @@
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'data' : dataArr},
+            data    : {'datan' : dataArr},
             success : function(response){
                       //  alert(response);
                       },

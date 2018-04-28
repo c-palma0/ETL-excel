@@ -11,6 +11,7 @@
 
 	<h3>&nbsp;&nbsp;Sismos&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
+
 	<br>
 	<div>
 <table  id="table" class="table">
@@ -77,6 +78,7 @@
     </div>
   </div>
 </div>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -120,7 +122,7 @@
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'data' : dataArr},
+            data    : {'datas' : dataArr},
             success : function(response){
                       //  alert(response);
                       },
@@ -137,13 +139,18 @@
 </script>
 </body>
 	
-<script>
-window.onload=function(){
-var pos=window.name || 0;
-window.scrollTo(0,pos);
-}
-window.onunload=function(){
-window.name=self.pageYOffset || (document.documentElement.scrollTop+document.body.scrollTop);
-}
-</script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+    });
+    </script>
+    <script>
+    window.onload=function(){
+    var pos=window.name || 0;
+    window.scrollTo(0,pos);
+    }
+    window.onunload=function(){
+    window.name=self.pageYOffset || (document.documentElement.scrollTop+document.body.scrollTop);
+    }
+    </script>
 </html>

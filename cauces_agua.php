@@ -27,7 +27,7 @@ $resultado = $results -> num_rows;
 			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id[]"></td>
 			<td><?php echo $row['coord_x']; ?></td>
 			<td><?php echo $row['coord_y']; ?></td>
-			<td><input  style="color:red; text-align:center;" type="text" name="nombre" value="<?php echo $row['nombre'];?>" pattern="([a-z0-9\s]*[/]*[,]*[.]*)*"  title="Solo texto" required></td>
+			<td><input  style="color:red; text-align:center;" type="text" name="nombre" value="<?php echo $row['nombre'];?>" pattern="([a-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" required></td>
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>
 			<?php	

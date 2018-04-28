@@ -33,10 +33,10 @@ $resultado = $results -> num_rows;
 			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
             <td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-            <?php  $des=$row['descripcion']; if (preg_match('/^([a-z0-9\s]*[\/]*[,]*[.]*)*+$/',"$des")):?>
+            <?php  $des=$row['descripcion']; if (preg_match('/^([a-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")):?>
                <td><?php echo $row['descripcion'];?><input style="display:none;" type="text" name="descripcion" value="<?php echo $row['descripcion'];?>"></td>
             <?php else: ?>
-                <td><input style="text-align:center; color:#DC3545;" type="text" name="descripcion" pattern="([a-z0-9\s]*[/]*[,]*[.]*)*"  title="Solo texto" value="<?php echo $row['descripcion'];?>" required></td>
+                <td><input style="text-align:center; color:#DC3545;" type="text" name="descripcion" pattern="([a-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['descripcion'];?>" required></td>
             <?php endif  ?>	 
               <?php   if (preg_match('/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',$row['fecha_ini'])): ?>
                <td><?php  echo date("d-m-Y", strtotime($row['fecha_ini']));?><input style="display:none;" type="text" name="descripcion" value="<?php $row['fecha_ini']; ?>"></td>
