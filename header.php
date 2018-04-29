@@ -91,7 +91,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
          <a class="dropdown-item" href="vialidades.php">Vialidades</a>
-         <a class="dropdown-item" href="numeros.php">Numeros Oficiales</a>
+         <a class="dropdown-item" href="numeros.php">Números Oficiales</a>
          <a class="dropdown-item" href="glorietas.php">Glorietas</a>
          <a class="dropdown-item" href="camellones.php">Camellones</a>
          <a class="dropdown-item" href="licencias.php">Licencias de construcción</a>
