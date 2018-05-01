@@ -2,14 +2,14 @@
 
 	
 
-<?php $results = mysqli_query($db, "SELECT t.id, t.nombre, t.id_material, t.coord_x, t.coord_y, c.material  FROM tbl_vialidad as t join ct_tipo_material as c on t.id_material= c.id"); 
+<?php $results = mysqli_query($db, "SELECT * FROM tbl_antenas_telecomunicacion"); 
 $resultado = $results -> num_rows;
 ?>
-<div class="etl2">
+<div class="etl3">
 
 <?php if ($resultado):?>
 
-	<h3>Vialidades&nbsp; <?php echo $resultado; ?><img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
+	<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Antenas de telecomunicación&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
 	<div>
@@ -19,8 +19,11 @@ $resultado = $results -> num_rows;
 			<th scope="col"><input type="checkbox" id="checkAll"></th>
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
-			<th scope="col">Nombre</th>
-			<th scope="col">Tipo de material</th>
+			<th scope="col">Clave catastral</th>
+			<th scope="col">Num. Oficial</th>
+            <th scope="col">Obra</th>
+			<th scope="col">Tipo de obra</th>
+			<th scope="col">Fecha de registro</th>
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>
 		</tr>
 	</thead>
@@ -32,8 +35,11 @@ $resultado = $results -> num_rows;
 			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-            <td><?php echo $row['material'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
+			<td><input style=" color: #DC3545 ;" style="text-align:center;" type="text" name="area" value="<?php echo $row['clave_cata'];?>"  pattern="0?\d+(.\d)*?" title="Solo numeros positivos" required></td>
+            <td><?php echo $row['num_oficial'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
+            <td><?php echo $row['obra'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	    
+            <td><?php echo $row['tipo_de_obra'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>
+            <td><?php echo $row['fecha_ini'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>		
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
@@ -116,7 +122,7 @@ $resultado = $results -> num_rows;
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'datav' : dataArr},
+            data    : {'dataat' : dataArr},
             success : function(response){
                       //  alert(response);
                       },

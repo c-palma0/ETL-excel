@@ -20,7 +20,7 @@ $resultado = $results -> num_rows;
             <th scope="col">Coordenada X</th>
             <th scope="col">Coordenada Y</th>
             <th scope="col">Motivo de multa</th>
-            <th scope="col">Fecha ingreso</th>          
+            <th scope="col">Fecha de registro</th>          
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>
 		</tr>
 	</thead>
@@ -34,7 +34,7 @@ $resultado = $results -> num_rows;
 			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
             <td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
             <?php  $des=$row['descripcion']; if (preg_match('/^([a-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")):?>
-               <td><?php echo $row['descripcion'];?><input style="display:none;" type="text" name="descripcion" value="<?php echo $row['descripcion'];?>"></td>
+            <td><?php echo $row['descripcion'];?><input style="display:none;" type="text" name="descripcion" value="<?php echo $row['descripcion'];?>"></td>
             <?php else: ?>
                 <td><input style="text-align:center; color:#DC3545;" type="text" name="descripcion" pattern="([a-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['descripcion'];?>" required></td>
             <?php endif  ?>	 
@@ -43,8 +43,7 @@ $resultado = $results -> num_rows;
             <?php else: ?>
                 <td><input style="text-align:center; color:#DC3545;" id="datefield"   name="fecha_ini" type="date" name="bday" required></td>
             <?php endif  ?>		
-            <td><button type="submit" class="btn btn-outline-warning">Actualizar</button>	
-            				
+            <td><button type="submit" class="btn btn-outline-warning">Actualizar</button>	        				
 			</td>
 			</form>
 		</tr>

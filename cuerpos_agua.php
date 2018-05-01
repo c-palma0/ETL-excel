@@ -33,7 +33,7 @@ $resultado = $results -> num_rows;
 			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
 			<td><?php echo $row['tipo'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-			<td><input style=" color: #DC3545 ;" style="text-align:center;" type="text" name="area" value="<?php echo $row['area'];?>"  pattern="0?\d+(.\d)*?" title="Solo numeros positivos" required></td>
+
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
 			</td>

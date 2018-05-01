@@ -15,6 +15,14 @@
 	<link rel="stylesheet" href="css/estilos.css" media="screen" title="no title">
 	<link rel="stylesheet" href="table.css" media="screen" title="no title">
 	<style>
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 38%;  
+}
+.myicon {
+    width: 50px;
+    height: 50px;
+}
 .etl2{
   content:center; 
   text-align: center;
@@ -24,6 +32,17 @@
   width: 1000px;
   height: 120px;
   margin-left: -500px;
+  margin-top: -300px;
+}
+.etl3{
+  content:center; 
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 120px;
+  margin-left: -550px;
   margin-top: -300px;
 }
 .etl_t{
@@ -37,7 +56,17 @@
   margin-left: -480px;
   margin-top: -300px;
 }
-	</style>
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #343a40;
+   color: white;
+   text-align: center;
+}
+</style>
 </head>
 
 <body style="margin:0;">
@@ -56,10 +85,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav navbar-center">
      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Salud
+         <img title="Salud" class="myicon" src="img/hospital.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="hospitales.php">Hospitales</a>
@@ -67,7 +96,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Ecología
+         <img title="Ecología" class="myicon" src="img/tree.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="cauces_agua.php">Cauces de agua</a>
@@ -77,7 +106,7 @@
       </li>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Protección civil
+         <img title="Protección civil" class="myicon" src="img/shield.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="sismos.php">Sismos</a>
@@ -87,7 +116,7 @@
       </li>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Urbano
+          <img title="Urbano" class="myicon" src="img/house.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
          <a class="dropdown-item" href="vialidades.php">Vialidades</a>
@@ -95,12 +124,12 @@
          <a class="dropdown-item" href="glorietas.php">Glorietas</a>
          <a class="dropdown-item" href="camellones.php">Camellones</a>
          <a class="dropdown-item" href="licencias.php">Licencias de construcción</a>
-         <a class="dropdown-item" href="antenas-php">Antenas de telecomunicacón</a>
+         <a class="dropdown-item" href="antenas.php">Antenas de telecomunicacón</a>
         </div>
       </li>
        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Vialidad
+         <img title="Vialidad" class="myicon" src="img/car.png">
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
          <a class="dropdown-item" href="paradas.php">Paradas de camión</a>
@@ -112,5 +141,9 @@
         </div>
       </li>
     </ul>
+
+    
+      <a style="position: absolute; right: 0;" class="btn btn-outline-info my-2 my-sm-0" href="dw.php" >Salir</a>
+
   </div>
 </nav>

@@ -2,14 +2,13 @@
 
 	
 
-<?php $results = mysqli_query($db, "SELECT t.id, t.nombre, t.id_material, t.coord_x, t.coord_y, c.material  FROM tbl_vialidad as t join ct_tipo_material as c on t.id_material= c.id"); 
-$resultado = $results -> num_rows;
-?>
+<?php $results = mysqli_query($db, "SELECT * FROM tbl_semaforos");
+$resultado = $results -> num_rows; ?>
 <div class="etl2">
 
 <?php if ($resultado):?>
 
-	<h3>Vialidades&nbsp; <?php echo $resultado; ?><img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
+	<h3>&nbsp;&nbsp;Semáforos&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
 	<div>
@@ -19,8 +18,11 @@ $resultado = $results -> num_rows;
 			<th scope="col"><input type="checkbox" id="checkAll"></th>
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
-			<th scope="col">Nombre</th>
-			<th scope="col">Tipo de material</th>
+			<th scope="col">Fecha </th>
+			<th scope="col">Hora</th>
+            <th scope="col">Afectados</th>
+            <th scope="col">Lesionados</th>
+            <th scope="col">Muertos</th>
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>
 		</tr>
 	</thead>
@@ -30,10 +32,13 @@ $resultado = $results -> num_rows;
 		<tr>
 		<form method="POST" action="server.php">
 			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
-			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
-			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-            <td><?php echo $row['material'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
+			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
+			<td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
+			<td><?php echo $row['fecha'];?><input style="display:none;" type="text" name="fecha" value="<?php echo $row['fecha'];?>"></td>	
+            <td><?php echo $row['hora'];?><input style="display:none;" type="text" name="hora" value="<?php echo $row['hora'];?>"></td>	
+            <td><?php echo $row['afectados'];?></rd>
+            <td><?php echo $row['lesionados'];?></rd>
+            <td><?php echo $row['muertos'];?></rd>
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
@@ -62,11 +67,15 @@ $resultado = $results -> num_rows;
         </button>
 		 </div>
       <div class="modal-body">
-		-Las áreas ingresadas deben ser positivas.
+		-Solo se aceptan numeros positivos.
 		<br>
 		-El sistema no acepta guardar campos vacíos.
 		<br>
-		-Si desea hacer un registro sin tener todos los datos, coloque un 0.
+        -Si desea hacer un registro sin tener todos los datos, coloque un 0.
+        <br>
+        -EL formato de fecha debe ser dd-mm-aaaa.
+        <br>
+        -El formato de hora deve ser hh:mm. (ejemplo: 20:08)
       </div>
       <div class="modal-footer">
       </div>
@@ -116,7 +125,7 @@ $resultado = $results -> num_rows;
         $.ajax({
             type    : 'post',
             url     : 'server.php',
-            data    : {'datav' : dataArr},
+            data    : {'datasm' : dataArr},
             success : function(response){
                       //  alert(response);
                       },
