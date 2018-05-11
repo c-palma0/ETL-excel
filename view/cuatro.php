@@ -17,16 +17,15 @@ $dw->set_charset("utf8");
     
 $today = date("Y-m-d");  
 $error="1970-01-01";
-/*
+
 $glorieta = odbc_exec($conexion,"SELECT * FROM [tbl_glorietas$]");
     while($row = odbc_fetch_array($glorieta)) {
             $id = $row['id'];
             $nombre =  utf8_encode(strtolower($row['nombre']));
             $coord_x = $row['coord_x'];
             $coord_y = $row['coord_y'];
-            $monumento =  utf8_encode( strtolower($row['monumento']));
+            $monumento =  utf8_encode(strtolower($row['monumento']));
           
-           
            
         if ((preg_match('/^([áéíóúña-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$nombre") && $nombre!=null) 
 
@@ -38,7 +37,7 @@ $glorieta = odbc_exec($conexion,"SELECT * FROM [tbl_glorietas$]");
         }      
             
     }
-*/
+
 $camellones= odbc_exec($conexion,"SELECT * FROM [tbl_camellones$]");
 
 	while($row = odbc_fetch_array($camellones)) {
@@ -66,7 +65,7 @@ $lc = odbc_exec($conexion,"SELECT * FROM [tbl_licencias_de_construccion$]");
             $coord_x = $row['coord_x'];
             $coord_y = $row['coord_y'];
           
-            mysqli_query($db, "INSERT INTO tbl_licencias_de_construccion VALUES ($id,'$today',$coord_x,$coord_y)");
+           
             mysqli_query($dw, "INSERT INTO tbl_licencias_de_construccion VALUES ($id,'$today',$coord_x,$coord_y)");
             
     }

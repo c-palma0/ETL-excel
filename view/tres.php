@@ -68,7 +68,7 @@ $ct_ca = odbc_exec($conexion,"SELECT * FROM [ct_cond_fisica$]");
      
          mysqli_query($dw, "INSERT INTO tbl_arboles VALUES ($id,'$especie',$ancho_m,$altura_m,$c_fisica,'$numero','$solicito','$autoriza','$fecha_reso','$reforestacion','$today',$coord_x,$coord_y)");    
         }else{
-         mysqli_query($db, "INSERT INTO tbl_arboles VALUES ($id,'$especie',$ancho_m,$altura_m,$c_fisica,'$numero','$solicito','$autoriza','$fecha_reso','$reforestacion','$today',$coord_x,$coord_y)");  
+         mysqli_query($db, "INSERT INTO tbl_arboles VALUES ($id,'$especie','$ancho_m','$altura_m',$c_fisica,'$numero','$solicito','$autoriza','$fecha_reso','$reforestacion','$today',$coord_x,$coord_y)");  
         
         }        
     }

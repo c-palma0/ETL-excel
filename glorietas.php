@@ -8,7 +8,7 @@
 <div class="etl2">
 
 <?php if ($resultado):?>
-
+  <br>
 	<h3>&nbsp;&nbsp;Glorietas&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
@@ -70,15 +70,14 @@
         </button>
 		 </div>
       <div class="modal-body">
-		-Solo se aceptan numeros positivos.
+	
+  	-Los campos de texto pueden contener letras, numeros, comas, puntos y simbolos divisores.
+        (Las letras solo pueden ser minusculas debido a reglas de datos abiertos).
 		<br>
 		-El sistema no acepta guardar campos vacíos.
 		<br>
         -Si desea hacer un registro sin tener todos los datos, coloque un 0.
         <br>
-        -EL formato de fecha debe ser dd-mm-aaaa.
-        <br>
-        -El formato de hora deve ser hh:mm. (ejemplo: 20:08)
       </div>
       <div class="modal-footer">
       </div>
@@ -93,6 +92,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="table.js"></script>
+  <?php include 'scroll.php';?>
 	<script>
   
   $(document).ready(function(){

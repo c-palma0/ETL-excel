@@ -36,15 +36,17 @@
                         textPos: 'vertical',
                         fontSize: '25px',
                         onClose: function() {}
-                    });
+                    }); setTimeout(function(){
+                        $("body").waitMe('hide');
+                    },40000);
          
     $("#go_api").load($archivo, function(){
     
-         $("body").waitMe('hide');  
+       //  $("body").waitMe('hide');  
          
          
         })
-
+     // alert("uno");
       }
   
   function tres(){
@@ -63,15 +65,17 @@
                         textPos: 'vertical',
                         fontSize: '25px',
                         onClose: function() {}
-                    });
+                    });setTimeout(function(){
+                        $("body").waitMe('hide');
+                    },40000);
          
     $("#go_api").load($archivo, function(){
     
-         $("body").waitMe('hide');  
+         //$("body").waitMe('hide');  
          
          
         })
-
+     //alert("tres");
       }
 
        function cuatro(){
@@ -90,15 +94,17 @@
                         textPos: 'vertical',
                         fontSize: '25px',
                         onClose: function() {}
-                    });
+                    });setTimeout(function(){
+                        $("body").waitMe('hide');
+                    },40000);
          
     $("#go_api").load($archivo, function(){
     
-         $("body").waitMe('hide');  
+      //   $("body").waitMe('hide');  
          
          
         })
-
+   //  alert("cuatro");
       }
 
       function cinco(){
@@ -117,15 +123,17 @@
                         textPos: 'vertical',
                         fontSize: '25px',
                         onClose: function() {}
-                    });
+                    });setTimeout(function(){
+                        $("body").waitMe('hide');
+                    },40000);
          
     $("#go_api").load($archivo, function(){
     
-         $("body").waitMe('hide');  
+       //  $("body").waitMe('hide');  
          
          
         })
-
+    // alert("cinco");
       }
   
 </script>
@@ -149,13 +157,15 @@
                         textPos: 'vertical',
                         fontSize: '25px',
                         onClose: function() {}
-                    });
+                    });setTimeout(function(){
+                        $("body").waitMe('hide');
+                    },40000);
          
     $("#go_api").load($archivo, function(){ 
-         $("body").waitMe('hide');  
+        // $("body").waitMe('hide');  
          
         })
-
+     // alert("dos");
       }
   
 </script>

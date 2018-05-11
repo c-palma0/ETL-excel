@@ -18,7 +18,7 @@ $resultado = $results -> num_rows;?>
 			<th scope="col"><input type="checkbox" id="checkAll"></th>
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
-			<th scope="col">Nombre </th>
+			<th scope="col">Nombre</th>
 			<th scope="col">Tipo de hospital</th>
             <th scope="col">Dependencia</th>
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>

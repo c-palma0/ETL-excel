@@ -44,8 +44,6 @@ $cuerpoAgua = odbc_exec($conexion,"SELECT * FROM [tbl_cuerpos_de_agua$]");
     }
     
 
-
-
 $vial = odbc_exec($conexion,"SELECT * FROM [tbl_vialidad$]");
 
 	while($row = odbc_fetch_array($vial)) {

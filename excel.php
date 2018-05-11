@@ -7,10 +7,10 @@
     //consultas
     //productos
   
-    $sql = "SELECT * FROM tbl_vialidad";
+    $sql = "SELECT t.id, t.nombre, t.id_material, t.coord_x, t.coord_y, c.material , t.fecha_act FROM tbl_vialidad as t join ct_tipo_material as c on t.id_material= c.id";
     $resultado = mysqli_query($dw,$sql);
 
-    $sql = "SELECT * FROM tbl_numeros_oficiales";
+    $sql = "SELECT t.coord_x , t.coord_y, t.id, t.num_oficial, c.colonia , t.id_colonia, t.fecha_act FROM tbl_numeros_oficiales as t join ct_colonia as c on t.id_colonia= c.id";
     $resultadon = mysqli_query($dw,$sql);
     
     $sql = "SELECT * FROM tbl_glorietas";
@@ -130,7 +130,7 @@
         $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['coord_x']);
         $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['coord_y']);
         $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['nombre']);
-        $objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $rows['id_material']);
+        $objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $rows['material']);
         $objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, $rows['fecha_act']);
    
         
@@ -170,7 +170,7 @@
         $objPHPExcel->getActiveSheet()->setCellValue('J'.$fila, $rows['coord_x']);
         $objPHPExcel->getActiveSheet()->setCellValue('K'.$fila, $rows['coord_y']);
         $objPHPExcel->getActiveSheet()->setCellValue('L'.$fila, $rows['num_oficial']);
-        $objPHPExcel->getActiveSheet()->setCellValue('M'.$fila, $rows['id_colonia']);
+        $objPHPExcel->getActiveSheet()->setCellValue('M'.$fila, $rows['colonia']);
         $objPHPExcel->getActiveSheet()->setCellValue('N'.$fila, $rows['fecha_act']);
         
         $fila++; 
@@ -870,7 +870,7 @@
     $objPHPExcel->getActiveSheet()->setCellValue('C4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(50);
     $objPHPExcel->getActiveSheet()->setCellValue('D4', 'nombre');
-    $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
     $objPHPExcel->getActiveSheet()->setCellValue('E4', 'fecha act.');
     //base de datos
     //Recorremos los resultados de la consulta y los imprimimos
@@ -1004,74 +1004,5 @@
     
     $writer->save('php://output');
     mysqli_close($dw );
-
-   
-
-    $sql = mysqli_connect("localhost", "root","","catastro_dw");
-  
-    mysqli_query($db,"DELETE FROM ct_colonia;");
-    mysqli_query($sql,"DELETE FROM ct_color;");
-    mysqli_query($sql,"DELETE from ct_cond_fisica;");
-    mysqli_query($sql,"DELETE FROM ct_cuerpos_agua;");
-    mysqli_query($sql,"DELETE from ct_tipo_co;");
-    mysqli_query($sql,"DELETE FROM ct_tipo_estructura;");
-    mysqli_query($sql,"DELETE FROM ct_tipo_luz;");
-    mysqli_query($sql,"DELETE FROM ct_tipo_material;");
-    mysqli_query($sql,"DELETE FROM tbl_accidentes;");
-    mysqli_query($sql,"DELETE FROM tbl_antenas_telecomunicacion;");
-    mysqli_query($sql,"DELETE FROM tbl_atlas_de_riesgo;");
-    mysqli_query($sql,"DELETE FROM tbl_camellones;");
-    mysqli_query($sql,"DELETE FROM tbl_cauces_de_agua;");
-    mysqli_query($sql,"DELETE FROM tbl_cuerpos_de_agua;");
-    mysqli_query($sql,"DELETE FROM tbl_glorietas;");
-    mysqli_query($sql,"DELETE FROM tbl_hospital;");
-    mysqli_query($sql,"DELETE FROM tbl_arboles;");
-    mysqli_query($sql,"DELETE FROM tbl_licencias_de_construccion;");
-    mysqli_query($sql,"DELETE FROM tbl_multas;");
-
-    mysqli_query($sql,"DELETE FROM tbl_numeros_oficiales;");
-    mysqli_query($sql,"DELETE FROM tbl_paradas_de_camion;");
-    mysqli_query($sql,"DELETE FROM tbl_refugios_temporales;");
-    
-    mysqli_query($sql,"DELETE FROM tbl_rutas_camion;");
-    mysqli_query($sql,"DELETE FROM tbl_semaforos;");
-    mysqli_query($sql,"DELETE FROM tbl_sismo_2003;");
-    mysqli_query($sql,"DELETE FROM tbl_topes;");
-    mysqli_query($sql,"DELETE FROM tbl_vialidad;");
-    mysqli_close($sql);
-	$db = mysqli_connect("localhost", "root","","etl");
-
-    mysqli_query($db,"DELETE FROM tbl_arboles;");
-    mysqli_query($db,"DELETE FROM ct_colonia;");
-    mysqli_query($db,"DELETE FROM ct_color;");
-    mysqli_query($db,"DELETE from ct_cond_fisica;");
-    mysqli_query($db,"DELETE FROM ct_cuerpos_agua;");
-    mysqli_query($db,"DELETE from ct_tipo_co;");
-    mysqli_query($db,"DELETE FROM ct_tipo_estructura;");
-    mysqli_query($db,"DELETE FROM ct_tipo_luz;");
-    mysqli_query($db,"DELETE FROM ct_tipo_material;");
-    mysqli_query($db,"DELETE FROM tbl_accidentes;");
-    mysqli_query($db,"DELETE FROM tbl_antenas_telecomunicacion;");
-    mysqli_query($db,"DELETE FROM tbl_atlas_de_riesgo;");
-    mysqli_query($db,"DELETE FROM tbl_camellones;");
-    mysqli_query($db,"DELETE FROM tbl_cauces_de_agua;");
-    mysqli_query($db,"DELETE FROM tbl_cuerpos_de_agua;");
-    mysqli_query($db,"DELETE FROM tbl_glorietas;");
-    mysqli_query($db,"DELETE FROM tbl_hospital;");
-    mysqli_query($db,"DELETE FROM tbl_vialidad;");
-    mysqli_query($db,"DELETE FROM tbl_licencias_de_construccion;");
-    mysqli_query($db,"DELETE FROM tbl_multas;");
-
-    mysqli_query($db,"DELETE FROM tbl_numeros_oficiales;");
-    mysqli_query($db,"DELETE FROM tbl_paradas_de_camion;");
-    mysqli_query($db,"DELETE FROM tbl_refugios_temporales;");
-    
-    mysqli_query($db,"DELETE FROM tbl_rutas_camion;");
-    mysqli_query($db,"DELETE FROM tbl_semaforos;");
-    mysqli_query($db,"DELETE FROM tbl_sismo_2003;");
-    mysqli_query($db,"DELETE FROM tbl_topes;");
-    mysqli_close($db);
-
-
   
 ?>

@@ -57,11 +57,12 @@ if (isset($_POST['glorieta'])) {
 				$coord_y = $_POST['coord_y'];
 				$ancho_m = $_POST['ancho_m'];
 				$alto_m= $_POST["alto_m"];  
-				$id_c_fisica = $_POST['c_fisica'];
+				$id_c_fisica = $_POST['id_c_fisica'];
 				$numero = $_POST['numero'];
 				$solicito= $_POST["solicito"];
 				$autoriza= $_POST['autoriza'];
 				$fecha_reso= $_POST['fecha_reso'];
+				$fecha_reso=date('Y-m-d', strtotime($fecha_reso));
 				$reforestacion= $_POST["reforestacion"];  
 				$today = date("Y-m-d");  
   
@@ -108,9 +109,9 @@ if (isset($_POST['glorieta'])) {
 		header('location:cauces_agua.php');
 	}
 
-if (isset($_POST['camellones'])) {
+if (isset($_POST['camellon'])) {
 			$id = $_POST['id'];
-			$area = $_POST['camellones'];
+			$area = $_POST['area'];
 			$coord_x = $_POST['coord_x'];
 			$coord_y = $_POST['coord_y'];
 			$today = date("Y-m-d"); 
@@ -118,7 +119,7 @@ if (isset($_POST['camellones'])) {
 		//mysqli_query($db, "UPDATE tbl_vialidad SET nombre='$nombre', id_calle='$id_calle' WHERE id=$id");
 		echo ($today);
 		mysqli_query($db, "UPDATE tbl_camellones SET area='$area' WHERE id=$id");
-		mysqli_query($dw, "INSERT INTO  tbl_camellones VALUES ($id,$area,'$today',$coord_x,$coord_y)");
+		mysqli_query($dw, "INSERT INTO  tbl_camellones VALUES ($id,'$area','$today',$coord_x,$coord_y)");
 		mysqli_query($db, "DELETE FROM tbl_camellones WHERE id=$id");
 	//	$_SESSION['message'] = "actualizado!"; 
 

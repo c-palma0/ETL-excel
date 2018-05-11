@@ -22,9 +22,9 @@ $resultado = $results -> num_rows;
 			<th scope="col">Especie </th>
 			<th scope="col">Ancho</th>
             <th scope="col">Alto</th>
-            <th scope="col">Condición fisica</th>
+            <th scope="col">Condición física</th>
             <th scope="col">No.</th>
-            <th scope="col">Solicito</th>
+            <th scope="col">Solicitud</th>
             <th scope="col">Autoriza</th>
             <th scope="col">Fecha de resolución</th>
             <th scope="col">Reforestación</th>
@@ -37,6 +37,7 @@ $resultado = $results -> num_rows;
 		<tr>
 		<form method="POST" action="server.php">
             <td style="display:none;"><input type="text" name="id"  value="<?php echo $row['id'];?>"></td>
+             <td style="display:none;"><input type="text" name="id_c_fisica"  value="<?php echo $row['id_c_fisica'];?>"></td>
 			<td title="<?php echo $row['id'];?>   "><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
@@ -45,12 +46,12 @@ $resultado = $results -> num_rows;
             <?php else: ?>
                 <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="especie" pattern="([áéíóúña-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['especie'];?>" required></td>
             <?php endif  ?>	
-		    <?php $ancho_m=$row['ancho_m']; if (filter_var($ancho_m, FILTER_VALIDATE_FLOAT) && $ancho_m >= 0 || $ancho_m ==0 && $ancho_m != ""):?>
+		    <?php $ancho_m=$row['ancho_m']; if (filter_var($ancho_m, FILTER_VALIDATE_FLOAT) && $ancho_m >= 0 || $ancho_m =='0' && $ancho_m != ''):?>
             <td><?php echo $row['ancho_m'];?><input style="display:none;" type="text" name="ancho_m" value="<?php echo $row['ancho_m'];?>"></td>	
             <?php else: ?>
                 <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="ancho_m"  pattern="0?\d+(.\d)*?" title="Solo numeros positivos"  value="<?php echo $row['ancho_m'];?>" required></td>
             <?php endif  ?>	
-             <?php $alto_m=$row['alto_m']; if ((filter_var($alto_m, FILTER_VALIDATE_FLOAT)) && $alto_m >= 0 || $alto_m==0 && $alto_m != ""):?>
+             <?php $alto_m=$row['alto_m']; if ((filter_var($alto_m, FILTER_VALIDATE_FLOAT)) && $alto_m >= 0 || $alto_m=='0' && $alto_m != ''):?>
             <td><?php echo $row['alto_m'];?><input style="display:none;" type="text" name="alto_m" value="<?php echo $row['alto_m'];?>"></td>	
             <?php else: ?>
                 <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="alto_m"  pattern="0?\d+(.\d)*?" title="Solo numeros positivos"  value="<?php echo $row['alto_m'];?>" required></td>
@@ -148,6 +149,7 @@ $resultado = $results -> num_rows;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="table.js"></script>
+    <?php include 'scroll.php';?>
 	<script>
   
   $(document).ready(function(){

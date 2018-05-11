@@ -8,8 +8,8 @@
 
 
 <?php if ($resultado):?>
-
-	<h3>Numeros Oficiales<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
+  <br>
+	<h3>Números Oficiales<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
 	<div>
@@ -19,7 +19,7 @@
 			<th scope="col"><input type="checkbox" id="checkAll"></th>
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
-			<th scope="col">Num. Oficial</th>
+			<th scope="col">No. Oficial</th>
 			<th scope="col">Colonia</th>
 			<th scope="col"><button type="button" class="btn btn-danger" id="delete">Eliminar</button></th>
 		</tr>
@@ -82,6 +82,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="table.js"></script>
+  <?php include 'scroll.php';?>
 	<script>
   
   $(document).ready(function(){

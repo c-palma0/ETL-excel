@@ -20,7 +20,7 @@ $resultado = $results -> num_rows;
 			<th scope="col">Coordenada X</th>
 			<th scope="col">Coordenada Y</th>
 			<th scope="col">Clave catastral</th>
-			<th scope="col">Num. Oficial</th>
+			<th scope="col">No. Oficial</th>
             <th scope="col">Obra</th>
 			<th scope="col">Tipo de obra</th>
 			<th scope="col">Fecha de registro</th>
@@ -51,7 +51,7 @@ $resultado = $results -> num_rows;
 </div>
 	<?php else: ?>
     <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br> 
-    	<h2>No se encontraron Errores</h2>
+    	<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No se encontraron Errores</h2>
 	<?php endif ?> 
 
 </div>

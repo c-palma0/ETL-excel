@@ -1,7 +1,7 @@
 <?php include 'header.php';?>
 
 
-<?php $results = mysqli_query($db, "SELECT * FROM tbl_camellones"); 
+<?php $results = mysqli_query($db, "SELECT * FROM tbl_licencias_de_construccion"); 
 $resultado = $results -> num_rows;
 ?>
 <div class="etl1">

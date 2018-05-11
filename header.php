@@ -15,70 +15,28 @@
 	<link rel="stylesheet" href="css/estilos.css" media="screen" title="no title">
 	<link rel="stylesheet" href="table.css" media="screen" title="no title">
 	<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(76, 175, 80, 0.3);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+   -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
 
-.botonF1{
-  width:60px;
-  height:60px;
-  border-radius:100%;
-  background:#F44336;
-  right:0;
-  bottom:0;
-  position:absolute;
-  margin-right:16px;
-  margin-bottom:16px;
-  border:none;
-  outline:none;
-  color:#FFF;
-  font-size:36px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition:.3s;  
+  
 }
-span{
-  transition:.5s;  
-}
-.botonF1:hover span{
-  transform:rotate(360deg);
-}
-.botonF1:active{
-  transform:scale(1.1);
-}
-.btn1{
-  width:40px;
-  height:40px;
-  border-radius:100%;
-  border:none;
-  color:#FFF;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  font-size:28px;
-  outline:none;
-  position:absolute;
-  right:0;
-  bottom:0;
-  margin-right:26px;
-  transform:scale(0);
-}
-.botonF2{
-  background:#2196F3;
-  margin-bottom:85px;
-  transition:0.5s;
-}
-.botonF3{
-  background:#673AB7;
-  margin-bottom:130px;
-  transition:0.7s;
-}
-.botonF4{
-  background:#009688;
-  margin-bottom:175px;
-  transition:0.9s;
-}
-.botonF5{
-  background:#FF5722;
-  margin-bottom:220px;
-  transition:0.99s;
-}
-.animacionVer{
-  transform:scale(1);
+
+#myBtn:hover {
+  background-color: lightgreen;;
 }
   .navbar-nav.navbar-center {
     position: absolute;
