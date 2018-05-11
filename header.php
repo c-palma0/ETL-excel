@@ -15,6 +15,71 @@
 	<link rel="stylesheet" href="css/estilos.css" media="screen" title="no title">
 	<link rel="stylesheet" href="table.css" media="screen" title="no title">
 	<style>
+
+.botonF1{
+  width:60px;
+  height:60px;
+  border-radius:100%;
+  background:#F44336;
+  right:0;
+  bottom:0;
+  position:absolute;
+  margin-right:16px;
+  margin-bottom:16px;
+  border:none;
+  outline:none;
+  color:#FFF;
+  font-size:36px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition:.3s;  
+}
+span{
+  transition:.5s;  
+}
+.botonF1:hover span{
+  transform:rotate(360deg);
+}
+.botonF1:active{
+  transform:scale(1.1);
+}
+.btn1{
+  width:40px;
+  height:40px;
+  border-radius:100%;
+  border:none;
+  color:#FFF;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size:28px;
+  outline:none;
+  position:absolute;
+  right:0;
+  bottom:0;
+  margin-right:26px;
+  transform:scale(0);
+}
+.botonF2{
+  background:#2196F3;
+  margin-bottom:85px;
+  transition:0.5s;
+}
+.botonF3{
+  background:#673AB7;
+  margin-bottom:130px;
+  transition:0.7s;
+}
+.botonF4{
+  background:#009688;
+  margin-bottom:175px;
+  transition:0.9s;
+}
+.botonF5{
+  background:#FF5722;
+  margin-bottom:220px;
+  transition:0.99s;
+}
+.animacionVer{
+  transform:scale(1);
+}
   .navbar-nav.navbar-center {
     position: absolute;
     left: 38%;  
@@ -56,6 +121,12 @@
   margin-left: -480px;
   margin-top: -300px;
 }
+.c{
+  content:center; 
+  text-align: center;
+  position: absolute;
+ 
+}
 
 .footer {
    position: fixed;
@@ -80,7 +151,7 @@
 	<?php endif ?>
 
     <nav style="background-color: black;" class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="index.php">ETL</a>
+  <a class="navbar-brand" href="etl.php">ETL</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -123,8 +194,8 @@
          <a class="dropdown-item" href="numeros.php">Números Oficiales</a>
          <a class="dropdown-item" href="glorietas.php">Glorietas</a>
          <a class="dropdown-item" href="camellones.php">Camellones</a>
-         <a class="dropdown-item" href="licencias.php">Licencias de construcción</a>
-         <a class="dropdown-item" href="antenas.php">Antenas de telecomunicacón</a>
+         <a class="dropdown-item" href="licencia.php">Licencias de construcción</a>
+         <a class="dropdown-item" href="antenas.php">Antenas de telecomunicación</a>
         </div>
       </li>
        <li class="nav-item dropdown">

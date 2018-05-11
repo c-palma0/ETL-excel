@@ -29,13 +29,21 @@
 	while ($row = mysqli_fetch_array($results)): ?>
 		<tr>
 		<form method="POST" action="server.php">
-			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
+			<td title="<?php echo $row['id'] ?>" name="id1[]"><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="num_oficial" value="<?php echo $row['nombre'];?>"></td>	
-            <td><?php echo $row['monumento'];?><input style="display:none;" type="text" name="sismo" value="<?php echo $row['monumento'];?>"></td>	
+			 <?php  $des=$row['nombre']; if (preg_match('/^([áéíóúña-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")&&$des!=null):?>
+            <td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="nombre" value="<?php echo $row['nombre'];?>"></td>	
+            <?php else: ?>
+                <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="nombre" pattern="([áéíóúña-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['nombre'];?>" required></td>
+            <?php endif  ?>	
+       <?php  $des=$row['monumento']; if (preg_match('/^([áéíóúña-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")&&$des!=null):?>
+            <td><?php echo $row['monumento'];?><input style="display:none;" type="text" name="monumento" value="<?php echo $row['monumento'];?>"></td>	
+            <?php else: ?>
+                <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="monumento" pattern="([áéíóúña-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['monumento'];?>" required></td>
+        <?php endif  ?>	     
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
-			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
+			<td><button type="submit" name="glorieta" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
 			</form>
 		</tr>

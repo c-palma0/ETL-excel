@@ -6,7 +6,6 @@
 
     //consultas
     //productos
-
   
     $sql = "SELECT * FROM tbl_vialidad";
     $resultado = mysqli_query($dw,$sql);
@@ -115,15 +114,15 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('A4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('B4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('B4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('C4', 'coord_y');
+    $objPHPExcel->getActiveSheet()->setCellValue('C4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(50);
     $objPHPExcel->getActiveSheet()->setCellValue('D4', 'nombre');
     $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(15);
-    $objPHPExcel->getActiveSheet()->setCellValue('E4', 'id_material');
+    $objPHPExcel->getActiveSheet()->setCellValue('E4', 'material');
      $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('F4', 'fecha_act');
+    $objPHPExcel->getActiveSheet()->setCellValue('F4', 'fecha act.');
 
 	while ($rows = mysqli_fetch_array($resultado)){
         
@@ -154,15 +153,15 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(15);
     $objPHPExcel->getActiveSheet()->setCellValue('I4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(40);
-    $objPHPExcel->getActiveSheet()->setCellValue('J4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('J4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('K4', 'coord_y');
+    $objPHPExcel->getActiveSheet()->setCellValue('K4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('L4', 'num_oficial');
+    $objPHPExcel->getActiveSheet()->setCellValue('L4', 'no. oficial');
     $objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('M4', 'id_colonia');
+    $objPHPExcel->getActiveSheet()->setCellValue('M4', 'colonia');
     $objPHPExcel->getActiveSheet()->getColumnDimension('N')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('N4', 'id_colonia');
+    $objPHPExcel->getActiveSheet()->setCellValue('N4', 'fecha act.');
     //Recorremos los resultados de la consulta y los imprimimos
 
     while ($rows = mysqli_fetch_array($resultadon)){
@@ -194,9 +193,9 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('Q4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('R')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('R4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('R4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('S4', 'coord_y');
+    $objPHPExcel->getActiveSheet()->setCellValue('S4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('T')->setWidth(50);
     $objPHPExcel->getActiveSheet()->setCellValue('T4', 'nombre');
     $objPHPExcel->getActiveSheet()->getColumnDimension('U')->setWidth(55);
@@ -234,11 +233,11 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('Y')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('Y4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('Z')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('Z4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('Z4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AA')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('AA4', 'coord_y');
+    $objPHPExcel->getActiveSheet()->setCellValue('AA4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AB')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('AB4', 'fecha_act');
+    $objPHPExcel->getActiveSheet()->setCellValue('AB4', 'fecha act.');
 
 	while ($rows = mysqli_fetch_array($resultadol)){
         
@@ -268,13 +267,13 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('AE')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('AE4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AF')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('AF4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('AF4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AG')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('AG4', 'coord_y');
-    $objPHPExcel->getActiveSheet()->getColumnDimension('AH')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('AG4', 'coordenada_y');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('AH')->setWidth(20);
     $objPHPExcel->getActiveSheet()->setCellValue('AH4', 'area');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AI')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('AI4', 'fecha_act');
+    $objPHPExcel->getActiveSheet()->setCellValue('AI4', 'fecha act.');
 
 
 	while ($rows = mysqli_fetch_array($resultadoc)){
@@ -305,19 +304,19 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('AL')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('AL4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AM')->setWidth(10);
-    $objPHPExcel->getActiveSheet()->setCellValue('AM4', 'clave_cata');
+    $objPHPExcel->getActiveSheet()->setCellValue('AM4','clave catastral');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AN')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('AN4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('AN4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AO')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('AO4', 'coord_y');
+    $objPHPExcel->getActiveSheet()->setCellValue('AO4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AP')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('AP4', 'num_oficial');
+    $objPHPExcel->getActiveSheet()->setCellValue('AP4', 'no. oficial');
      $objPHPExcel->getActiveSheet()->getColumnDimension('AQ')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('AQ4', 'obra');
      $objPHPExcel->getActiveSheet()->getColumnDimension('AR')->setWidth(10);
-    $objPHPExcel->getActiveSheet()->setCellValue('AR4', 'tipo_de_obra');
+    $objPHPExcel->getActiveSheet()->setCellValue('AR4', 'tipo de obra');
     $objPHPExcel->getActiveSheet()->getColumnDimension('AS')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('AS4', 'fecha_act');
+    $objPHPExcel->getActiveSheet()->setCellValue('AS4', 'fecha act.');
 
 
 	while ($rows = mysqli_fetch_array($resultadoat)){
@@ -362,9 +361,9 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
     $objPHPExcel->getActiveSheet()->setCellValue('A4', 'id');
     $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('B4', 'coord_x');
+    $objPHPExcel->getActiveSheet()->setCellValue('B4', 'coordenada_x');
     $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
-    $objPHPExcel->getActiveSheet()->setCellValue('C4', 'coord_y');
+    $objPHPExcel->getActiveSheet()->setCellValue('C4', 'coordenada_y');
     $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(50);
     $objPHPExcel->getActiveSheet()->setCellValue('D4', 'nombre');
     $objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(35);
@@ -372,7 +371,7 @@
     $objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
     $objPHPExcel->getActiveSheet()->setCellValue('F4', 'dependencia');
     $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
-    $objPHPExcel->getActiveSheet()->setCellValue('G4', 'fecha_act');
+    $objPHPExcel->getActiveSheet()->setCellValue('G4', 'fecha act.');
     //base de datos
     //Recorremos los resultados de la consulta y los imprimimos
 	while ($rows = mysqli_fetch_array($resultados)){
@@ -845,7 +844,157 @@
     
     $objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "Z5:AJ".$fila);
     $objPHPExcel->getActiveSheet()->getStyle("Z5:AJ".$fila)->getAlignment()->setWrapText(true);
+////////////////////////////////////////////////////////////////////////////////////////////////////////// tercera hoja
 
+    $sql = "SELECT * FROM tbl_cauces_de_agua";
+    $resultados = mysqli_query($dw,$sql);
+    $objPHPExcel->createSheet(4);
+    //Establecemos la pestaña activa y nombre a la pestaña
+    $objPHPExcel->setActiveSheetIndex(4);//establecer como si fuera arreglo
+    $objPHPExcel->getActiveSheet(4)->setTitle("Ecología");//titulo
+
+    //productos añadir nombre de columnas y titulo
+    $fila = 5; //Establecemos en que fila inciara a imprimir los datos
+    //renombre
+    $objPHPExcel->getActiveSheet()->getStyle('A1:E3')->applyFromArray($estiloTituloReporte);
+    $objPHPExcel->getActiveSheet()->getStyle('A4:E5')->applyFromArray($estiloTituloColumnas);
+    
+     $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Cauces de agua');
+    $objPHPExcel->getActiveSheet()->mergeCells('A1:E3');
+    
+    $objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
+    $objPHPExcel->getActiveSheet()->setCellValue('A4', 'id');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('B4', 'coordenada_x');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('C4', 'coordenada_y');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(50);
+    $objPHPExcel->getActiveSheet()->setCellValue('D4', 'nombre');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('E4', 'fecha act.');
+    //base de datos
+    //Recorremos los resultados de la consulta y los imprimimos
+	while ($rows = mysqli_fetch_array($resultados)){
+        
+        $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $rows['id']);
+        $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $rows['coord_x']);
+        $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $rows['coord_y']);
+        $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $rows['nombre']);
+        $objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $rows['fecha_act']);
+
+        
+        $fila++; 
+    }
+  
+   $fila = $fila-1;
+    
+    $objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "A5:E".$fila);
+    $objPHPExcel->getActiveSheet()->getStyle("A5:E".$fila)->getAlignment()->setWrapText(true);
+  ////////////arboles
+    $sql = "SELECT t.coord_x, t.fecha_act, t.coord_y, t.id, t.especie, t.ancho_m, t.alto_m, t.id_c_fisica, t.numero, t.solicito, t.autoriza, t.fecha_reso, t.reforestacion, c.c_fisica FROM tbl_arboles as t join ct_cond_fisica as c on t.id_c_fisica= c.id";
+    $resul = mysqli_query($dw,$sql);
+    $fila = 5; //Establecemos en que fila inciara a imprimir los datos
+    //renombre
+    $objPHPExcel->getActiveSheet()->getStyle('H1:T3')->applyFromArray($estiloTituloReporte);
+    $objPHPExcel->getActiveSheet()->getStyle('H4:T5')->applyFromArray($estiloTituloColumnas);
+    
+     $objPHPExcel->getActiveSheet()->setCellValue('H1', 'Arboles');
+    $objPHPExcel->getActiveSheet()->mergeCells('H1:T3');
+    
+    $objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(10);
+    $objPHPExcel->getActiveSheet()->setCellValue('H4', 'id');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('I4', 'coordenada_x');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('J4', 'coordenada_y');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('K4', 'especie');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('L4', 'alto');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('M4', 'ancho');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('N')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('N4', 'reforestacion');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('O')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('O4', 'condicion fisica');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('P4', 'numero');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('Q4', 'solicito');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('R')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('R4', 'autoriza');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('S4', 'fecha resolución');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('T')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('T4', 'fecha act.');
+    //base de datos
+    //Recorremos los resultados de la consulta y los imprimimos
+	while ($rows = mysqli_fetch_array($resul)){
+        
+        $objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, $rows['id']);
+        $objPHPExcel->getActiveSheet()->setCellValue('I'.$fila, $rows['coord_x']);
+        $objPHPExcel->getActiveSheet()->setCellValue('J'.$fila, $rows['coord_y']);
+        $objPHPExcel->getActiveSheet()->setCellValue('K'.$fila, $rows['especie']);
+        $objPHPExcel->getActiveSheet()->setCellValue('L'.$fila, $rows['alto_m']);
+        $objPHPExcel->getActiveSheet()->setCellValue('M'.$fila, $rows['ancho_m']);
+        $objPHPExcel->getActiveSheet()->setCellValue('N'.$fila, $rows['reforestacion']);
+        $objPHPExcel->getActiveSheet()->setCellValue('O'.$fila, $rows['c_fisica']);
+        $objPHPExcel->getActiveSheet()->setCellValue('P'.$fila, $rows['numero']);
+        $objPHPExcel->getActiveSheet()->setCellValue('Q'.$fila, $rows['solicito']);
+        $objPHPExcel->getActiveSheet()->setCellValue('R'.$fila, $rows['autoriza']);
+        $objPHPExcel->getActiveSheet()->setCellValue('S'.$fila, $rows['fecha_reso']);
+        $objPHPExcel->getActiveSheet()->setCellValue('T'.$fila, $rows['fecha_act']);
+    
+    $fila++; 
+    }
+  
+   $fila = $fila-1;
+ 
+    $objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "H5:T".$fila);
+    $objPHPExcel->getActiveSheet()->getStyle("H5:T".$fila)->getAlignment()->setWrapText(true);
+     /////cuerpos de agua
+    $sql = "SELECT t.coord_x , t.coord_y, t.id, t.area, c.tipo, t.id_ca, t.fecha_act FROM tbl_cuerpos_de_agua as t join ct_cuerpos_agua as c on t.id_ca= c.id";
+    $resultadoc = mysqli_query($dw,$sql);
+
+    $fila = 5; //Establecemos en que fila inciara a imprimir los datos
+    //renombre
+    $objPHPExcel->getActiveSheet()->getStyle('Z1:AE3')->applyFromArray($estiloTituloReporte);
+    $objPHPExcel->getActiveSheet()->getStyle('Z4:AE5')->applyFromArray($estiloTituloColumnas);
+    
+     $objPHPExcel->getActiveSheet()->setCellValue('Z1', 'Cuerpos de agua');
+    $objPHPExcel->getActiveSheet()->mergeCells('Z1:AE3');
+    
+    $objPHPExcel->getActiveSheet()->getColumnDimension('Z')->setWidth(10);
+    $objPHPExcel->getActiveSheet()->setCellValue('Z4', 'id');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('AA')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('AA4', 'coordenada_x');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('AB')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('AB4', 'coordenada_y');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('AC')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('AC4', 'area');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('AD')->setWidth(30);
+    $objPHPExcel->getActiveSheet()->setCellValue('AD4', 'tipo');
+    $objPHPExcel->getActiveSheet()->getColumnDimension('AE')->setWidth(20);
+    $objPHPExcel->getActiveSheet()->setCellValue('AE4', 'fecha act.');
+    //base de datos
+    //Recorremos los resultados de la consulta y los imprimimos
+	while ($rows = mysqli_fetch_array($resultadoc)){
+        
+        $objPHPExcel->getActiveSheet()->setCellValue('Z'.$fila, $rows['id']);
+        $objPHPExcel->getActiveSheet()->setCellValue('AA'.$fila, $rows['coord_x']);
+        $objPHPExcel->getActiveSheet()->setCellValue('AB'.$fila, $rows['coord_y']);
+        $objPHPExcel->getActiveSheet()->setCellValue('AC'.$fila, $rows['area']);
+        $objPHPExcel->getActiveSheet()->setCellValue('AD'.$fila, $rows['tipo']);
+        $objPHPExcel->getActiveSheet()->setCellValue('AE'.$fila, $rows['fecha_act']);
+
+        
+        $fila++; 
+    }
+  
+   $fila = $fila-1;
+    
+    $objPHPExcel->getActiveSheet()->setSharedStyle($estiloInformacion, "Z5:AE".$fila);
+    $objPHPExcel->getActiveSheet()->getStyle("Z5:AE".$fila)->getAlignment()->setWrapText(true);
     /////////////////////////////fin
     $writer = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
   
@@ -854,5 +1003,75 @@
     header('Cache-Control: max-age=0');
     
     $writer->save('php://output');
-mysqli_close($dw );
+    mysqli_close($dw );
+
+   
+
+    $sql = mysqli_connect("localhost", "root","","catastro_dw");
+  
+    mysqli_query($db,"DELETE FROM ct_colonia;");
+    mysqli_query($sql,"DELETE FROM ct_color;");
+    mysqli_query($sql,"DELETE from ct_cond_fisica;");
+    mysqli_query($sql,"DELETE FROM ct_cuerpos_agua;");
+    mysqli_query($sql,"DELETE from ct_tipo_co;");
+    mysqli_query($sql,"DELETE FROM ct_tipo_estructura;");
+    mysqli_query($sql,"DELETE FROM ct_tipo_luz;");
+    mysqli_query($sql,"DELETE FROM ct_tipo_material;");
+    mysqli_query($sql,"DELETE FROM tbl_accidentes;");
+    mysqli_query($sql,"DELETE FROM tbl_antenas_telecomunicacion;");
+    mysqli_query($sql,"DELETE FROM tbl_atlas_de_riesgo;");
+    mysqli_query($sql,"DELETE FROM tbl_camellones;");
+    mysqli_query($sql,"DELETE FROM tbl_cauces_de_agua;");
+    mysqli_query($sql,"DELETE FROM tbl_cuerpos_de_agua;");
+    mysqli_query($sql,"DELETE FROM tbl_glorietas;");
+    mysqli_query($sql,"DELETE FROM tbl_hospital;");
+    mysqli_query($sql,"DELETE FROM tbl_arboles;");
+    mysqli_query($sql,"DELETE FROM tbl_licencias_de_construccion;");
+    mysqli_query($sql,"DELETE FROM tbl_multas;");
+
+    mysqli_query($sql,"DELETE FROM tbl_numeros_oficiales;");
+    mysqli_query($sql,"DELETE FROM tbl_paradas_de_camion;");
+    mysqli_query($sql,"DELETE FROM tbl_refugios_temporales;");
+    
+    mysqli_query($sql,"DELETE FROM tbl_rutas_camion;");
+    mysqli_query($sql,"DELETE FROM tbl_semaforos;");
+    mysqli_query($sql,"DELETE FROM tbl_sismo_2003;");
+    mysqli_query($sql,"DELETE FROM tbl_topes;");
+    mysqli_query($sql,"DELETE FROM tbl_vialidad;");
+    mysqli_close($sql);
+	$db = mysqli_connect("localhost", "root","","etl");
+
+    mysqli_query($db,"DELETE FROM tbl_arboles;");
+    mysqli_query($db,"DELETE FROM ct_colonia;");
+    mysqli_query($db,"DELETE FROM ct_color;");
+    mysqli_query($db,"DELETE from ct_cond_fisica;");
+    mysqli_query($db,"DELETE FROM ct_cuerpos_agua;");
+    mysqli_query($db,"DELETE from ct_tipo_co;");
+    mysqli_query($db,"DELETE FROM ct_tipo_estructura;");
+    mysqli_query($db,"DELETE FROM ct_tipo_luz;");
+    mysqli_query($db,"DELETE FROM ct_tipo_material;");
+    mysqli_query($db,"DELETE FROM tbl_accidentes;");
+    mysqli_query($db,"DELETE FROM tbl_antenas_telecomunicacion;");
+    mysqli_query($db,"DELETE FROM tbl_atlas_de_riesgo;");
+    mysqli_query($db,"DELETE FROM tbl_camellones;");
+    mysqli_query($db,"DELETE FROM tbl_cauces_de_agua;");
+    mysqli_query($db,"DELETE FROM tbl_cuerpos_de_agua;");
+    mysqli_query($db,"DELETE FROM tbl_glorietas;");
+    mysqli_query($db,"DELETE FROM tbl_hospital;");
+    mysqli_query($db,"DELETE FROM tbl_vialidad;");
+    mysqli_query($db,"DELETE FROM tbl_licencias_de_construccion;");
+    mysqli_query($db,"DELETE FROM tbl_multas;");
+
+    mysqli_query($db,"DELETE FROM tbl_numeros_oficiales;");
+    mysqli_query($db,"DELETE FROM tbl_paradas_de_camion;");
+    mysqli_query($db,"DELETE FROM tbl_refugios_temporales;");
+    
+    mysqli_query($db,"DELETE FROM tbl_rutas_camion;");
+    mysqli_query($db,"DELETE FROM tbl_semaforos;");
+    mysqli_query($db,"DELETE FROM tbl_sismo_2003;");
+    mysqli_query($db,"DELETE FROM tbl_topes;");
+    mysqli_close($db);
+
+
+  
 ?>

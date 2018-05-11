@@ -8,7 +8,7 @@ $resultado = $results -> num_rows;
 <div class="etl1">
 
 <?php if ($resultado):?>
-
+<br>
 	<h3>Cuerpos de agua    <img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
@@ -29,12 +29,12 @@ $resultado = $results -> num_rows;
 	while ($row = mysqli_fetch_array($results)): ?>
 		<tr>
 		<form method="POST" action="server.php">
-			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
+			<td title="<?php echo $row['id'] ?>"><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
 			<td><?php echo $row['tipo'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-
-			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
+      <td><input  style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="area" value="<?php echo $row['area'];?>"  pattern="0?\d+(.\d)*?" title="Solo numeros positivos" required></td>
+			<td style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
 			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
 			</form>

@@ -16,7 +16,7 @@ $(document).ready(function(){
                     });
                       setTimeout(function(){
                         $("body").waitMe('hide');
-                    },5000);
+                    },30000);
         $.ajax({
             url:"http://127.0.0.1:8081/all",
             dataType:'html',
@@ -27,7 +27,7 @@ $(document).ready(function(){
                 var datos = data.info;
                      console.log(data);
                       if(data){
-                                window.location.replace("http://localhost:8080/etl/index2.php");
+                                window.location.replace("http://localhost:8080/etl/etl.php");
                             }
                     },
             error: function(error){

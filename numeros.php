@@ -1,7 +1,7 @@
 <?php include 'header.php';?>
 
 	
-<?php $results = mysqli_query($db, "SELECT t.coord_x , t.coord_y, t.id, t.num_oficial, c.colonia  FROM tbl_numeros_oficiales as t join ct_colonia as c on t.id_colonia= c.id");
+<?php $results = mysqli_query($db, "SELECT t.coord_x , t.coord_y, t.id, t.num_oficial, c.colonia , t.id_colonia FROM tbl_numeros_oficiales as t join ct_colonia as c on t.id_colonia= c.id");
  $resultado = $results -> num_rows; ?>
 
 <div class="etl1">
@@ -29,13 +29,14 @@
 	while ($row = mysqli_fetch_array($results)): ?>
 		<tr>
 		<form method="POST" action="server.php">
-			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
+			<td title="<?php echo $row['id'] ?>"><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['num_oficial'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-
+			<td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" pattern="[0-9]*?" title="Solo numeros enteros" type="text" name="num_oficial" value="<?php echo $row['num_oficial'];?>"></td>	
+			<td><?php echo $row['colonia'];?><input style="display:none;" type="text" name="colonia" value="<?php echo $row['colonia'];?>"></td>
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
-			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
+      <td  style="display:none;"><input type="text" name="id_colonia" value="<?php echo $row['id_colonia'];?>"></td>
+			<td><button type="submit" name="num" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
 			</form>
 		</tr>

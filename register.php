@@ -12,13 +12,12 @@
 <style>
 body, html {
     height: 100%;
-    color: white;
     overflow-x: hidden;
  
 }
 
 .bg { 
-    background-image: url("fondo.jpg");
+    background-image: url("fondo3.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -55,12 +54,16 @@ body, html {
                                   <input class="form-control" placeholder="E-mail" name="email" id="email" type="email"  required>
                               </div>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Password" name="password" id="password" type="password" required>
+                                  <input class="form-control" placeholder="Usuario" name="usuario" id="usuario" type="text"  required>
                               </div>
-                              <button class="btn btn-lg btn-light btn-block" type="submit" name="reg_user">Registrar</button>
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Contraseña" name="password" id="password" type="password" required>
+                              </div>
+                              <button class="btn btn-lg btn-dark btn-block" type="submit" name="reg_user">Registrar</button>
                           </fieldset>
                       </form>
-                      <center><a style="color: black" href="login.php"><h5>Ingresar</h5></a></center>
+                      <br>
+                      <center><a class="btn btn-lg btn-light btn-block"  href="login.php"><h5>Ingresar</h5></a></center>
                   </div>
               </div>
           </div>

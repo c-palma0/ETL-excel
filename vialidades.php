@@ -9,7 +9,7 @@ $resultado = $results -> num_rows;
 
 <?php if ($resultado):?>
 
-	<h3>Vialidades&nbsp; <?php echo $resultado; ?><img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
+	<h3>Vialidades&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
 	<div>
@@ -29,13 +29,13 @@ $resultado = $results -> num_rows;
 	while ($row = mysqli_fetch_array($results)): ?>
 		<tr>
 		<form method="POST" action="server.php">
-			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
+			<td title="<?php echo $row['id'] ?>"><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x'];?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y'];?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
-            <td><?php echo $row['material'];?><input style="display:none;" type="text" name="id_ca" value="<?php echo $row['id_ca'];?>"></td>	
+		<td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="nombrev" pattern="([áéíóúña-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['nombre'];?>" required></td>
+      <td><?php echo $row['material'];?><input style="display:none;" type="text" name="id_material" value="<?php echo $row['id_material'];?>"></td>	
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
-			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
+			<td><button type="submit" name="vialidad" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
 			</form>
 		</tr>

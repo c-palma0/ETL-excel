@@ -5,25 +5,28 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Registro</title>
+    <title>Inicio de sesión</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" media="screen" title="no title">
 <link rel="stylesheet" href="css/estilos.css">
 <style>
 body, html {
     height: 100%;
-    color: white;
-    overflow-x: hidden;
+   overflow-x: hidden;
  
 }
 
 .bg { 
-    background-image: url("fondo.jpg");
+    background-image: url("fondo3.jpg");
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     
+}
+.div-lr{
+  /*    background-color: white; 
+  */
 }
 
 </style>
@@ -46,16 +49,17 @@ body, html {
                        	<?php include('errors.php'); ?>
                           <fieldset>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Nombre" name="name" id="name" type="text"  required>
+                                  <input class="form-control" placeholder="Usuario" name="usuario" id="name" type="text"  required>
                               </div>
                         
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Password" name="password" id="password" type="password" required>
+                                  <input class="form-control" placeholder="Contraseña" name="password" id="password" type="password" required>
                               </div>
-                              <button class="btn btn-lg btn-light btn-block" type="submit" name="login_user">Ingresar</button>
+                              <button class="btn btn-lg btn-dark btn-block" type="submit" name="login_user">Ingresar</button>
                           </fieldset>
                       </form>
-                      <center><a style="color: black" href="register.php"><h5>Registrar</h5></a></center>
+                      <br>
+                      <center><a class="btn btn-lg btn-light btn-block"  href="register.php"><h5>Registrar</h5></a></center>
                   </div>
               </div>
           </div>

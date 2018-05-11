@@ -7,7 +7,7 @@ $resultado = $results -> num_rows;?>
 <div class="etl2">
 
 <?php if ($resultado):?>
-
+    <br>
 	<h3>&nbsp;&nbsp;Hospitales&nbsp;<img data-toggle="modal" data-target="#exampleModalCenter" src="wi2.png"></h3>
 
 	<br>
@@ -29,17 +29,31 @@ $resultado = $results -> num_rows;?>
 	while ($row = mysqli_fetch_array($results)): ?>
 		<tr>
 		<form method="POST" action="server.php">
-			<td><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
+			<td title="<?php echo $row['id'] ?>"><input class="checkbox" type="checkbox" id="<?php echo $row['id'] ?>" name="id1[]"></td>
 			<td><?php echo $row['coord_x']; ?><input style="display:none;" type="text" name="coord_x" value="<?php echo $row['coord_x'];?>"></td>
 			<td><?php echo $row['coord_y']; ?><input style="display:none;" type="text" name="coord_y" value="<?php echo $row['coord_y'];?>"></td>
-			<td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="nombre" value="<?php echo $row['nombre'];?>"></td>	
-            <td><?php echo $row['tipo'];?><input style="display:none;" type="text" name="hospital" value="<?php echo $row['tipo'];?>"></td>	
+			 <?php  $des=$row['nombre']; if (preg_match('/^([a-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")&&$des!=null):?>
+            <td><?php echo $row['nombre'];?><input style="display:none;" type="text" name="nombre" value="<?php echo $row['nombre'];?>"></td>	
+            <?php else: ?>
+                <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="nombre" pattern="([a-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['nombre'];?>" required></td>
+            <?php endif  ?>	 
+            <?php  $des=$row['tipo']; if (preg_match('/^([a-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")&&$des!=null):?>
+            <td><?php echo $row['tipo'];?><input style="display:none;" type="text" name="tipo" value="<?php echo $row['tipo'];?>"></td>	
+            <?php else: ?>
+                <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="tipo" pattern="([a-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['tipo'];?>" required></td>
+            <?php endif  ?>	 
+             <?php  $des=$row['dependencia']; if (preg_match('/^([a-z0-9\s]*[\/]*[,]*[.]*[(]*[)]*)*+$/',"$des")&&$des!=null):?>
             <td><?php echo $row['dependencia'];?><input style="display:none;" type="text" name="dependencia" value="<?php echo $row['dependencia'];?>"></td>	
+            <?php else: ?>
+                <td><input style="text-align:center; color:black; background-color:#EE9A9A;" class="form-control" type="text" name="dependencia" pattern="([a-z0-9\s]*[/]*[,]*[.]*[(]*[)]*)*"  title="Solo texto" value="<?php echo $row['dependencia'];?>" required></td>
+            <?php endif  ?>
 			<td  style="display:none;"><input type="text" name="id" value="<?php echo $row['id'];?>"></td>
-			<td><button type="submit" class="btn btn-outline-warning">Actualizar</button>					
+			<td><button type="submit" name="hospitales" class="btn btn-outline-warning">Actualizar</button>					
 			</td>
 			</form>
 		</tr>
+
+
 <?php endwhile ?>
  </tbody>
 </table>
@@ -63,7 +77,7 @@ $resultado = $results -> num_rows;?>
         </button>
 		 </div>
       <div class="modal-body">
-			-Los nombres de los Cauces de agua pueden contener letras, numeros, comas, puntos y simbolos divisores.
+		-Los campos de texto pueden contener letras, numeros, comas, puntos y simbolos divisores.
         (Las letras solo pueden ser minusculas debido a reglas de datos abiertos).
 		<br>
 		-El sistema no acepta guardar campos vacíos.
